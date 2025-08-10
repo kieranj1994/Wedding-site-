@@ -99,7 +99,7 @@ body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-
   inset: 0;
   background-image: url('/images/6a67e1f2-59dc-4b48-858a-a56cbe23c24d.png');
   background-size: cover;
-  background-position: center;
+  background-position: center -100px; /* moves it up */
   transform: rotate(270deg);
   transform-origin: center center;
   z-index: 0;

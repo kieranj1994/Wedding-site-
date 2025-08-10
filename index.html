@@ -28,6 +28,7 @@
     <div class="hero-inner">
       <h1><span class="names">Kieran</span> & <span class="names">Ciara</span></h1>
       <p class="date">Saturday • 12 July 2026 • London</p>
+      <div id="countdown" style="font-size:1.5rem; font-weight:600; margin-top:1rem;"></div>
       <a href="#rsvp" class="btn btn-primary">RSVP</a>
     </div>
   </section>
@@ -176,5 +177,31 @@
   </main>
 
   <script src="assets/js/main.js"></script>
+  <script>
+  // Set your wedding date here
+  const weddingDate = new Date("July 30, 2026 00:00:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance < 0) {
+      document.getElementById("countdown").innerHTML = "It's your wedding day! 💍";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+      `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  updateCountdown(); // Initial call
+  setInterval(updateCountdown, 1000); // Update every second
+</script>
+
 </body>
 </html>

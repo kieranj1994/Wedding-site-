@@ -123,3 +123,6 @@ body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-
   .hero::before { background-position: center 20%; }
   .hero{ min-height: 70vh; }
 }
+#countdown {
+  padding-top: 3rem; /* moves it further down in hero */
+}

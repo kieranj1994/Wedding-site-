@@ -90,3 +90,26 @@ body::after {
   margin: 2rem 0;
 }
 
+.hero {
+  background: url('images/6a67e1f2-59dc-4b48-858a-a56cbe23c24d.png') center center no-repeat;
+  background-size: cover;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #333; /* Adjust text color if needed */
+}
+
+.hero h1, 
+.hero p {
+  position: relative;
+  z-index: 2;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6); /* soft overlay for readability */
+  z-index: 1;
+}
+
+

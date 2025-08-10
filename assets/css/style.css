@@ -57,3 +57,36 @@ ul{padding-left:1.1rem}
 @media (max-width:520px){.grid{grid-template-columns:1fr}}
 
 footer.footer{padding:2rem 0;border-top:1px solid #eee;color:var(--muted);text-align:center}
+
+/* --- Wedding Florals Decoration (Safe Add-on) --- */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  pointer-events: none;
+}
+
+body::before {
+  top: 0;
+  left: 0;
+  background-image: url('images/corner-top-left.svg');
+}
+
+body::after {
+  bottom: 0;
+  right: 0;
+  background-image: url('images/corner-bottom-right.svg');
+}
+
+/* Optional floral divider (use <div class="section-divider"></div> in HTML) */
+.section-divider {
+  width: 100%;
+  height: 80px;
+  background: url('images/divider-vine.svg') center/contain no-repeat;
+  margin: 2rem 0;
+}
+

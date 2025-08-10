@@ -90,13 +90,14 @@ body::after {
   margin: 2rem 0;
 }
 
+/* --- Updated Hero Background with Correct Path --- */
 .hero {
-   background: url('images/6a67e1f2-59dc-4b48-858a-a56cbe23c24d.png') center center no-repeat;
+  background: url('../../images/6a67e1f2-59dc-4b48-858a-a56cbe23c24d.png') center center no-repeat;
   background-size: cover;
-  min-height: 80vh; /* NEW */
+  min-height: 80vh;
   padding: 4rem 1rem;
   text-align: center;
-  color: #333; /* Adjust text color if needed */
+  color: #333;
 }
 
 .hero h1, 
@@ -105,14 +106,13 @@ body::after {
   z-index: 2;
 }
 
+/* Overlay removed so image is fully visible */
 /*
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.6); /* soft overlay for readability */
+  background: rgba(255, 255, 255, 0.6);
   z-index: 1;
 }
 */
-
-

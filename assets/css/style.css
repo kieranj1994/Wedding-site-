@@ -1,31 +1,59 @@
-/* --- Wedding Florals Decoration --- */
-body::before, body::after {
-  content: "";
-  position: fixed;
-  width: 200px;
-  height: 200px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 1;
-  pointer-events: none;
+/* Minimal, elegant wedding theme for GitHub Pages */
+:root{
+  --bg:#fff;
+  --text:#1f2330;
+  --muted:#6b7280;
+  --brand:#7b6b8d; /* dusty lavender */
+  --brand-2:#c8bed2;
+  --card:#faf7fc;
+  --max: 1100px;
 }
 
-body::before {
-  top: 0;
-  left: 0;
-  background-image: url('images/corner-top-left.svg');
-}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);}
+h1,h2,h3{font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;color:var(--text);margin:0 0 .5rem}
+h1{font-size: clamp(2rem, 6vw, 4rem); font-weight:600; letter-spacing:.02em}
+h2{font-size: clamp(1.5rem, 3.5vw, 2.25rem); font-weight:600}
+h3{font-size: clamp(1.1rem, 2.2vw, 1.35rem); font-weight:600}
+p{line-height:1.7; margin:.25rem 0 1rem}
+.lead{color:var(--muted)}
+ul{padding-left:1.1rem}
 
-body::after {
-  bottom: 0;
-  right: 0;
-  background-image: url('images/corner-bottom-right.svg');
-}
+.container{max-width:var(--max);margin:0 auto;padding: clamp(1rem, 2vw, 2rem);}
+.section{padding: clamp(2rem, 6vw, 5rem) 0;}
+.section.alt{background: #fbfbfd;}
+.section.center{text-align:center}
+.two-col{display:grid; gap:2rem; grid-template-columns: 1.1fr 0.9fr;}
+@media (max-width:900px){.two-col{grid-template-columns:1fr}}
 
-/* Floral Divider */
-.section-divider {
-  width: 100%;
-  height: 80px;
-  background: url('images/divider-vine.svg') center/contain no-repeat;
-  margin: 2rem 0;
-}
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter: blur(8px);display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-bottom:1px solid #eee}
+.nav a{color:var(--text);text-decoration:none;margin:0 .25rem;font-weight:600}
+.nav .brand{font-family:'Cormorant Garamond', Georgia, serif; font-size:1.25rem}
+.nav .btn{padding:.5rem .75rem;border:1px solid var(--brand);border-radius:999px}
+
+.hero{min-height:70vh;display:grid;place-items:center;background:linear-gradient(180deg, rgba(200,190,210,.35), transparent), url('../images/placeholder-hero.webp') center/cover no-repeat; text-align:center}
+.hero .names{font-variant: common-ligatures; white-space: nowrap;}
+.hero .date{color:var(--muted); margin-bottom:1rem}
+.btn{display:inline-block;padding:.65rem 1rem;border-radius:999px;border:1px solid #ddd;text-decoration:none}
+.btn-primary{background:var(--brand); color:white; border-color: var(--brand);}
+.card{background:var(--card); padding:1.25rem; border-radius:14px; border:1px solid #eee; box-shadow: 0 1px 0 rgba(0,0,0,.04)}
+
+.timeline{position:relative;margin:2rem 0;border-left:2px solid var(--brand-2);padding-left:1.25rem}
+.t-item{position:relative;margin:0 0 1.5rem 0}
+.t-dot{position:absolute;left:-10px;top:.4rem;width:10px;height:10px;background:var(--brand);border-radius:50%}
+.t-content h3{margin:0}
+.t-meta{color:var(--muted);font-size:.9rem;margin:.15rem 0 .5rem}
+
+.cards{display:grid;gap:1.25rem}
+.cards.three{grid-template-columns: repeat(3, 1fr);}
+@media (max-width:900px){.cards.three{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.cards.three{grid-template-columns:1fr}}
+
+.person img{width:100%;height:300px;object-fit:cover;border-radius:12px;border:1px solid #eee}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.grid img{width:100%;height:200px;object-fit:cover;border-radius:10px;border:1px solid #eee}
+@media (max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}}
+
+footer.footer{padding:2rem 0;border-top:1px solid #eee;color:var(--muted);text-align:center}

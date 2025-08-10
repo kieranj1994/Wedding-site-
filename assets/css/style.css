@@ -124,5 +124,5 @@ body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-
   .hero{ min-height: 70vh; }
 }
 #countdown {
-  padding-top: 3rem; /* moves it further down in hero */
+  padding-top: 5rem; /* moves it further down in hero */
 }

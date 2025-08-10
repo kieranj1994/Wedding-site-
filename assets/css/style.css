@@ -105,6 +105,7 @@ body::after {
   z-index: 2;
 }
 
+/*
 .hero::before {
   content: "";
   position: absolute;
@@ -112,5 +113,6 @@ body::after {
   background: rgba(255, 255, 255, 0.6); /* soft overlay for readability */
   z-index: 1;
 }
+*/
 
 

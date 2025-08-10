@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(300,300) scale(-1,-1)">
+    <g fill="none" stroke="#1B5E3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 280 C 50 220, 120 180, 180 140 C 220 110, 260 60, 300 0"/>
+      <path d="M60 260 C 90 230, 140 200, 180 160"/>
+      <path d="M100 240 C 130 210, 160 190, 200 150"/>
+    </g>
+    <!-- Leaves -->
+    <g fill="#1B5E3A">
+      <ellipse cx="80" cy="230" rx="8" ry="16"/>
+      <ellipse cx="140" cy="190" rx="7" ry="14"/>
+      <ellipse cx="200" cy="140" rx="8" ry="16"/>
+    </g>
+    <!-- Flowers -->
+    <g fill="#E75480" stroke="#C73B67" stroke-width="2">
+      <circle cx="50" cy="250" r="12"/>
+      <circle cx="120" cy="200" r="10"/>
+      <circle cx="170" cy="150" r="11"/>
+    </g>
+  </g>
+</svg>

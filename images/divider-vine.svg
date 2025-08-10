@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="100" viewBox="0 0 1600 100" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#1B5E3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 50 C 100 20, 200 80, 300 50 C 400 20, 500 80, 600 50 C 700 20, 800 80, 900 50 C 1000 20, 1100 80, 1200 50 C 1300 20, 1400 80, 1500 50 C 1550 35, 1600 50, 1600 50"/>
+  </g>
+  <!-- Leaves -->
+  <g fill="#1B5E3A">
+    <ellipse cx="150" cy="50" rx="6" ry="12"/>
+    <ellipse cx="450" cy="50" rx="6" ry="12"/>
+    <ellipse cx="750" cy="50" rx="6" ry="12"/>
+    <ellipse cx="1050" cy="50" rx="6" ry="12"/>
+    <ellipse cx="1350" cy="50" rx="6" ry="12"/>
+  </g>
+  <!-- Flowers -->
+  <g fill="#E75480" stroke="#C73B67" stroke-width="2">
+    <circle cx="300" cy="50" r="8"/>
+    <circle cx="600" cy="50" r="8"/>
+    <circle cx="900" cy="50" r="8"/>
+    <circle cx="1200" cy="50" r="8"/>
+    <circle cx="1500" cy="50" r="8"/>
+  </g>
+</svg>

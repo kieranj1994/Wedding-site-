@@ -65,7 +65,7 @@ body::after{bottom:0;right:0;background-image:url('images/corner-bottom-right.sv
   background:url('/images/6a67e1f2-59dc-4b48-858a-a56cbe23c24d.png') center center no-repeat;
   background-size:contain;              
   background-color:#fff;
-  transform:rotate(270deg) translateX(10%) translateY(10%); /* shift right & down */
+  transform:rotate(270deg) translateX(5%) translateY(5%); /* shift right & down */
   transform-origin:center;
   z-index:0;
 }

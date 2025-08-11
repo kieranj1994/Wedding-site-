@@ -149,6 +149,6 @@ body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-
   }
 }
 .hero h1 {
-  margin-bottom: 5rem; /* pushes everything else (date, countdown, RSVP) down */
+  margin-bottom: 10rem; /* pushes everything else (date, countdown, RSVP) down */
 }
 

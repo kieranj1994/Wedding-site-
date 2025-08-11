@@ -100,7 +100,7 @@ body::after{bottom:0;right:0;background-image:url('images/corner-bottom-right.sv
 @media (max-width: 640px) {
   .hero::before {
     /* Keep rotation but tweak for smaller screens */
-    transform: rotate(270deg) translateX(8%) translateY(0%);
+    transform: rotate(270deg) translateX(20%) translateY(0%);
     background-size: contain;
   }
 

@@ -31,11 +31,6 @@ ul{padding-left:1.1rem}
 .nav .brand{font-family:'Cormorant Garamond', Georgia, serif; font-size:1.25rem}
 .nav .btn{padding:.5rem .75rem;border:1px solid var(--brand);border-radius:999px}
 
-/* Default hero (overridden below) */
-.hero{min-height:70vh;display:grid;place-items:center;background:linear-gradient(180deg, rgba(200,190,210,.35), transparent), url('../images/placeholder-hero.webp') center/cover no-repeat; text-align:center}
-.hero .names{font-variant: common-ligatures; white-space: nowrap;}
-.hero .date{color:var(--muted); margin-bottom:1rem}
-
 .btn{display:inline-block;padding:.65rem 1rem;border-radius:999px;border:1px solid #ddd;text-decoration:none}
 .btn-primary{background:var(--brand); color:white; border-color: var(--brand);}
 .card{background:var(--card); padding:1.25rem; border-radius:14px; border:1px solid #eee; box-shadow: 0 1px 0 rgba(0,0,0,.04)}
@@ -60,7 +55,7 @@ ul{padding-left:1.1rem}
 
 footer.footer{padding:2rem 0;border-top:1px solid #eee;color:var(--muted);text-align:center}
 
-/* --- Wedding Florals Decoration (Safe Add-on) --- */
+/* --- Wedding Florals Decoration --- */
 body::before, body::after {
   content: "";
   position: fixed;
@@ -71,10 +66,19 @@ body::before, body::after {
   z-index: 1;
   pointer-events: none;
 }
-body::before { top: 0; left: 0; background-image: url('images/corner-top-left.svg'); }
-body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-right.svg'); }
 
-/* Optional floral divider (use <div class="section-divider"></div> in HTML) */
+body::before {
+  top: 0;
+  left: 0;
+  background-image: url('images/corner-top-left.svg');
+}
+
+body::after {
+  bottom: 0;
+  right: 0;
+  background-image: url('images/corner-bottom-right.svg');
+}
+
 .section-divider {
   width: 100%;
   height: 80px;
@@ -82,52 +86,47 @@ body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-
   margin: 2rem 0;
 }
 
-/* ===== Custom hero background with rotation (all screens) ===== */
+/* --- HERO SECTION --- */
 .hero {
   position: relative;
-  overflow: hidden;
+  background: url('images/6a67e1f2-59dc-4b48-858a-a56cbe23c24d.png') center center no-repeat;
+  background-size: cover;
   min-height: 80vh;
+  padding: 4rem 1rem;
   text-align: center;
   color: #333;
-  background: none !important; /* kill placeholder bg above */
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url('/images/6a67e1f2-59dc-4b48-858a-a56cbe23c24d.png');
-  background-size: cover;            /* mobile/tablet: fill nicely */
-  background-position: center 10%;   /* small lift */
-  background-repeat: no-repeat;
-  transform: rotate(270deg);
-  transform-origin: center center;
-  z-index: 0;
-}
-/* Names above the image, date/countdown stay put */
-.hero h1, 
-.hero .date, 
-.hero a { position: relative; z-index: 1; }
-
-/* Move the names UP on all screens without moving date/countdown/button */
-.hero h1 { margin-top: -17rem; } /* tweak this value */
-
-/* Desktop: show entire artwork (less side-crop), slight upward nudge */
-@media (min-width: 1024px){
-  .hero{ min-height: 90vh; }
-  .hero::before{
-    background-size: contain;        /* show full image on laptops/desktops */
-    background-position: center 0%;  /* raise the picture; tweak if needed */
-    transform: translateY(-8%) rotate(270deg);
-  }
 }
 
-/* Optional: small text glow for readability */
-.hero h1, 
-.hero .date { text-shadow: 0 1px 8px rgba(0,0,0,.15); }
-
-/* Countdown: ensure no extra padding pushing it down */
-#countdown { padding-top: 0; margin-top: 0; }
-.hero .date {
+.hero h1 {
+  margin-top: -17rem; /* lift names up */
   position: relative;
-  margin-top: 10rem; /* adjust until it looks right */
+  z-index: 2;
+}
+
+.hero .date {
+  position: absolute;
+  top: calc(50% + 2rem); /* move date independently */
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--muted);
+  z-index: 2;
+}
+
+#countdown {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 6rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Desktop-specific image settings */
+@media (min-width: 1024px) {
+  .hero { 
+    min-height: 90vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(270deg);
+  }
 }

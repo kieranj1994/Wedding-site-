@@ -126,3 +126,25 @@ body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-
 #countdown {
   padding-top: 5rem; /* moves it further down in hero */
 }
+
+/* Desktop: show full image (no side crop) */
+@media (min-width: 1024px){
+  .hero { 
+    min-height: 90vh;              /* give it more height so 'contain' has room */
+    background: none !important;    /* make sure only the ::before layer is used */
+  }
+  .hero::before{
+    background-size: contain;       /* show the whole image */
+    background-position: center;    /* keep it centered */
+    background-repeat: no-repeat;   /* no tiling */
+    /* keep the rotation we added */
+    transform: translateY(-8%) rotate(270deg); /* small nudge up; tweak % if needed */
+  }
+}
+
+/* Optional: subtle backdrop behind the text on desktop for readability */
+@media (min-width: 1024px){
+  .hero h1, .hero .date {
+    text-shadow: 0 1px 10px rgba(0,0,0,0.12);
+  }
+}

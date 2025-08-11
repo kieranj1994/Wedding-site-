@@ -89,7 +89,7 @@ body::after {
 /* --- HERO SECTION --- */
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: 90vh; /* ensures image & text have space */
   padding: 4rem 1rem;
   text-align: center;
   color: #333;
@@ -108,14 +108,14 @@ body::after {
 }
 
 .hero h1 {
-  margin-top: -17rem; /* lift names up */
+  margin-top: -8rem; /* gentle lift so visible */
   position: relative;
   z-index: 2;
 }
 
 .hero .date {
   position: absolute;
-  top: calc(50% + 2rem); /* move date independently */
+  top: calc(50% + 2rem); /* independent position */
   left: 50%;
   transform: translateX(-50%);
   color: var(--muted);

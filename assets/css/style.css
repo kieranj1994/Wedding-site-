@@ -31,7 +31,7 @@ ul{padding-left:1.1rem}
 .nav .brand{font-family:'Cormorant Garamond', Georgia, serif; font-size:1.25rem}
 .nav .btn{padding:.5rem .75rem;border:1px solid var(--brand);border-radius:999px}
 
-/* Default hero (will be overridden below) */
+/* Default hero (overridden below) */
 .hero{min-height:70vh;display:grid;place-items:center;background:linear-gradient(180deg, rgba(200,190,210,.35), transparent), url('../images/placeholder-hero.webp') center/cover no-repeat; text-align:center}
 .hero .names{font-variant: common-ligatures; white-space: nowrap;}
 .hero .date{color:var(--muted); margin-bottom:1rem}
@@ -82,8 +82,7 @@ body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-
   margin: 2rem 0;
 }
 
-/* ===== Your custom hero background (rotated 270°) ===== */
-/* Place at end so it overrides earlier hero styles */
+/* ===== Custom hero background with rotation (all screens) ===== */
 .hero {
   position: relative;
   overflow: hidden;
@@ -92,63 +91,39 @@ body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-
   color: #333;
   background: none !important; /* kill placeholder bg above */
 }
-
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background-image: url('/images/6a67e1f2-59dc-4b48-858a-a56cbe23c24d.png');
-  background-size: cover;
-  background-position: center -500px; /* moves it up */
+  background-size: cover;            /* mobile/tablet: fill nicely */
+  background-position: center 10%;   /* small lift */
+  background-repeat: no-repeat;
   transform: rotate(270deg);
   transform-origin: center center;
   z-index: 0;
 }
-
+/* Names above the image, date/countdown stay put */
 .hero h1, 
 .hero .date, 
-.hero a {
-  position: relative;
-  z-index: 1;
-}
+.hero a { position: relative; z-index: 1; }
 
-/* Slight text shadow for readability (optional) */
-.hero h1, 
-.hero .date {
-  text-shadow: 0 1px 8px rgba(0,0,0,.15);
-}
+/* Move the names UP on all screens without moving date/countdown/button */
+.hero h1 { margin-top: -3rem; } /* tweak this value */
 
-/* Mobile tweak: lift focal point a bit */
-@media (max-width:640px){
-  .hero::before { background-position: center 20%; }
-  .hero{ min-height: 70vh; }
-}
-#countdown {
-  padding-top: 0rem; /* moves it further down in hero */
-}
-
-/* Desktop: show full image (no side crop) */
+/* Desktop: show entire artwork (less side-crop), slight upward nudge */
 @media (min-width: 1024px){
-  .hero { 
-    min-height: 90vh;              /* give it more height so 'contain' has room */
-    background: none !important;    /* make sure only the ::before layer is used */
-  }
+  .hero{ min-height: 90vh; }
   .hero::before{
-    background-size: contain;       /* show the whole image */
-    background-position: center;    /* keep it centered */
-    background-repeat: no-repeat;   /* no tiling */
-    /* keep the rotation we added */
-    transform: translateY(-8%) rotate(270deg); /* small nudge up; tweak % if needed */
+    background-size: contain;        /* show full image on laptops/desktops */
+    background-position: center 0%;  /* raise the picture; tweak if needed */
+    transform: translateY(-8%) rotate(270deg);
   }
 }
 
-/* Optional: subtle backdrop behind the text on desktop for readability */
-@media (min-width: 1024px){
-  .hero h1, .hero .date {
-    text-shadow: 0 1px 10px rgba(0,0,0,0.12);
-  }
-}
-.hero h1 {
-  margin-bottom: 10rem; /* pushes everything else (date, countdown, RSVP) down */
-}
+/* Optional: small text glow for readability */
+.hero h1, 
+.hero .date { text-shadow: 0 1px 8px rgba(0,0,0,.15); }
 
+/* Countdown: ensure no extra padding pushing it down */
+#countdown { padding-top: 0; margin-top: 0; }

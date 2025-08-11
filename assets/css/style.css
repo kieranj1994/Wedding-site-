@@ -69,8 +69,8 @@ body::after{bottom:0;right:0;background-image:url('images/corner-bottom-right.sv
   z-index:0;
 }
 .hero h1,.hero .date,#countdown{position:relative;z-index:2}
-.hero h1{margin:0;padding-top:1rem;}
-.hero .date{margin-top:9rem;color:var(--muted);}
+.hero h1{margin:0;padding-top:0rem;}
+.hero .date{margin-top:13rem;color:var(--muted);}
 #countdown{font-size:1.5rem;font-weight:600;margin-top:1rem;}
 
 @media (min-width:1024px){

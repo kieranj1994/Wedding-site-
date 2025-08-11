@@ -127,3 +127,7 @@ body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-
 
 /* Countdown: ensure no extra padding pushing it down */
 #countdown { padding-top: 0; margin-top: 0; }
+.hero .date {
+  position: relative;
+  margin-top: 10rem; /* adjust until it looks right */
+}

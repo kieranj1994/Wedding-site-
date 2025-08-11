@@ -109,6 +109,6 @@ body::after{bottom:0;right:0;background-image:url('images/corner-bottom-right.sv
   }
 
   .hero .date {
-    margin-top: 10rem; /* bring date closer to names */
+    margin-top: 12rem; /* bring date closer to names */
   }
 }

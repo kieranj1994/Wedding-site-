@@ -82,7 +82,7 @@ body::after{bottom:0;right:0;background-image:url('images/corner-bottom-right.sv
 
 /* Date & location under names */
 .hero .date{
-  margin-top:15rem;
+  margin-top:12rem;
   color:var(--muted);
 }
 

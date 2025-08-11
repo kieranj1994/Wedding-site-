@@ -124,7 +124,7 @@ body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-
   .hero{ min-height: 70vh; }
 }
 #countdown {
-  padding-top: 5rem; /* moves it further down in hero */
+  padding-top: 0rem; /* moves it further down in hero */
 }
 
 /* Desktop: show full image (no side crop) */
@@ -148,3 +148,7 @@ body::after  { bottom: 0; right: 0; background-image: url('images/corner-bottom-
     text-shadow: 0 1px 10px rgba(0,0,0,0.12);
   }
 }
+.hero h1 {
+  margin-bottom: 5rem; /* pushes everything else (date, countdown, RSVP) down */
+}
+

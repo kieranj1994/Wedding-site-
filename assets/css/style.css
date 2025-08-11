@@ -96,7 +96,7 @@ body::after {
   overflow: hidden;
 }
 
-/* Background image on its own rotated layer */
+/* Rotated background image only */
 .hero::before {
   content: "";
   position: absolute;
@@ -107,25 +107,27 @@ body::after {
   z-index: 0;
 }
 
+/* Names */
 .hero h1 {
-  margin-top: -8rem; /* gentle lift so visible */
+  margin: 0; /* reset the negative margin */
+  padding-top: 4rem; /* adjust to move names up/down */
   position: relative;
   z-index: 2;
 }
 
+/* Date & location */
 .hero .date {
-  position: absolute;
-  top: calc(50% + 2rem); /* independent position */
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--muted);
+  margin-top: 1rem; /* space under names */
+  position: relative;
   z-index: 2;
+  color: var(--muted);
 }
 
+/* Countdown */
 #countdown {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-top: 6rem;
+  margin-top: 1rem;
   position: relative;
   z-index: 2;
 }
